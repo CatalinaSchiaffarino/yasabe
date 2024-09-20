@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Información sobre becas y ayudas disponibles para estudiantes.">
+    <title>Becas y Ayudas</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: #000;
+            background-image: url('img/opa.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: rgb(217, 234, 252);
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar .nav-link {
+            color: #000;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .navbar .nav-link:hover {
+            color: #555;
+        }
+
+        .navbar .nav-link.active {
+            font-weight: 400;
+        }
+
+        .navbar-brand .logo {
+            max-height: 40px;
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            z-index: 1000;
+        }
+
+        .dropdown-menu a {
+            color: #212529;
+            padding: 0.25rem 1.5rem;
+            text-decoration: none;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #e9ecef;
+        }
+
+        /* Accordion Items */
+        .accordion-item {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion-header {
+            background-color: #0033a0;
+            color: white;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .accordion-button {
+            background-color: #0033a0;
+            color: white;
+            padding: 15px;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #002a80;
+        }
+
+        /* Card Styling */
+        .card-img-top {
+            object-fit: cover;
+            height: 200px;
+            width: 100%;
+        }
+
+        .card-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #0033a0;
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .btn-saber-mas {
+            background-color: #0033a0;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn-saber-mas:hover {
+            background-color: #002a80;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0033a0;
+            color: white;
+            padding: 15px 0;
+        }
+
+        footer a {
+            color: #fff;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Icons */
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #0033a0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-icon img {
+            width: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Incluye el header aquí -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/logo.png" alt="Logo de CGU Central" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w-100 justify-content-between">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="estatuto.html">Estatuto</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="centros-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Centros
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="centros-link">
+                                <li><a class="dropdown-item" href="facultad-derecho.html">Facultad de Derecho</a></li>
+                                <li><a class="dropdown-item" href="facultad-ciencias-sociales.html">Facultad de Ciencias Sociales</a></li>
+                                <li><a class="dropdown-item" href="facultad-ciencias-economicas.html">Facultad de Ciencias Económicas y de Administración</a></li>
+                                <li><a class="dropdown-item" href="facultad-informacion-comunicacion.html">Facultad de Información y Comunicación</a></li>
+                                <li><a class="dropdown-item" href="facultad-medicina.html">Facultad de Medicina</a></li>
+                                <li><a class="dropdown-item" href="facultad-arquitectura.html">Facultad de Arquitectura, Diseño y Urbanismo</a></li>
+                                <li><a class="dropdown-item" href="facultad-veterinaria.html">Facultad de Veterinaria</a></li>
+                                <li><a class="dropdown-item" href="facultad-agronomia.html">Facultad de Agronomía</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="quienes-somos.html">¿Quiénes somos?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sell.html">¡Súmate!</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-4">
+        <h1 class="mb-4">Becas y Ayudas</h1>
+
+        <!-- Filtros -->
+        <div class="mb-4">
+            <button class="btn btn-primary btn-filter" data-category="todos">Todos</button>
+            <button class="btn btn-primary btn-filter" data-category="alimentacion">Alimentación</button>
+            <button class="btn btn-primary btn-filter" data-category="alojamiento">Alojamiento</button>
+            <button class="btn btn-primary btn-filter" data-category="apoyo-economico">Apoyo Económico</button>
+            <button class="btn btn-primary btn-filter" data-category="material-estudio">Material de Estudio</button>
+            <button class="btn btn-primary btn-filter" data-category="transporte">Transporte</button>
+            <button class="btn btn-primary btn-filter" data-category="extraedad">Extraedad</button>
+        </div>
+
+        <!-- Accordion -->
+        <div class="accordion" id="accordionExample">
+
+            <!-- Item de Acordeón 1 -->
+            <div class="accordion-item" data-categoria="alimentacion">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Bienestar Universitario - Comedores Universitarios
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <img src="img/bienestar-universitario.jpg" class="img-fluid mb-3" alt="Bienestar Universitario - Comedores universitarios">
+                        <h5 class="card-title">Bienestar Universitario - Comedores Universitarios y Cantinas Descentralizadas</h5>
+                        <p class="card-text">
+                            <strong>Categoría:</strong> Alimentación<br>
+                            <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                            <strong>Institución:</strong> Universidad de la República<br>
+                            <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                            <strong>Observaciones:</strong> Servicio disponible en las sedes de Montevideo, Salto, Maldonado y Paysandú.<br>
+                            <strong>Contacto:</strong> becas@bienestar.udelar.edu.uy y 2408 58 65
+                        </p>
+                        <a href="https://bienestar.udelar.edu.uy/programa-becas/" class="btn btn-primary btn-saber-mas">Saber más</a>
+                    </div>
+                                </div>
+            </div>
+        </div>
+
+<!-- Item de Acordeón 2 -->
+<div class="accordion-item" data-categoria="alojamiento">
+    <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            Hogares Estudiantiles de Rocha
+        </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Hogares Estudiantiles de Rocha</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Alojamiento<br>
+                <strong>Nivel educativo:</strong> Cualquier nivel educativo<br>
+                <strong>Institución:</strong> Intendencia de Rocha<br>
+                <strong>Contacto:</strong> Oficina de la Juventud: juventudrocha@gmail.com
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 3 -->
+<div class="accordion-item" data-categoria="alojamiento">
+    <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            Hogar Universitario de San José
+        </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Hogar Universitario de San José</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Alojamiento<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Intendencia de San José<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                <strong>Contacto:</strong> Tel.: 4342 9000, interno 1601<br>
+                <a href="https://sanjose.gub.uy/2022-12-7becashogares/" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 4 -->
+<div class="accordion-item" data-categoria="alojamiento">
+    <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+            Hogar Universitario de Salto
+        </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Hogar Universitario de Salto</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Alojamiento<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Intendencia de Salto<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                <strong>Contacto:</strong> Teléfono 4733 3694<br>
+                <a href="https://www.salto.gub.uy/menu-residentes/menu-educacion/item/29-hogar-universitario" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 5 -->
+<div class="accordion-item" data-categoria="alojamiento">
+    <h2 class="accordion-header" id="headingFive">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+            Hogar Universitario de Paysandú en Salto
+        </button>
+    </h2>
+    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Hogar Universitario de Paysandú en Salto</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Alojamiento<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Intendencia de Paysandú<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                <strong>Contacto:</strong> becas.alojamiento@paysandu.gub.uy y Dirección de Promoción Social Intendencia Tel. 1865<br>
+                <a href="https://www.gub.uy/tramites/solicitud-beca-alojamiento-hogares-estudiantiles-intendencia-paysandu" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 6 -->
+<div class="accordion-item" data-categoria="alojamiento">
+    <h2 class="accordion-header" id="headingSix">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+            Hogar Universitario de Paysandú en Montevideo
+        </button>
+    </h2>
+    <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Hogar Universitario de Paysandú en Montevideo</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Alojamiento<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Intendencia de Paysandú<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                <strong>Contacto:</strong> becas.alojamiento@paysandu.gub.uy y Dirección de Promoción Social Intendencia Tel. 1865<br>
+                <a href="https://www.gub.uy/tramites/solicitud-beca-alojamiento-hogares-estudiantiles-intendencia-paysandu" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 7 -->
+<div class="accordion-item" data-categoria="alojamiento">
+    <h2 class="accordion-header" id="headingSeven">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+            Hogar Universitario de Florida
+        </button>
+    </h2>
+    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Hogar Universitario de Florida</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Alojamiento<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Intendencia de Florida<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                <strong>Contacto:</strong> Teléfonos: 4352 9166 y 4352 9168<br>
+                <a href="https://www.gub.uy/intendencia-florida/tramites-y-servicios/servicios/hogares-estudiantiles" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 8 -->
+<div class="accordion-item" data-categoria="alojamiento">
+    <h2 class="accordion-header" id="headingEight">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+            Hogar Universitario de Flores
+        </button>
+    </h2>
+    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Hogar Universitario de Flores</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Alojamiento<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Intendencia de Flores<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                <strong>Contacto:</strong> Tel. 43642210 y mail atencionciudadana@flores.gub.uy
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 9 -->
+<div class="accordion-item" data-categoria="alojamiento">
+    <h2 class="accordion-header" id="headingNine">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
+            Hogar Estudiantil de Colonia del Sacramento
+        </button>
+    </h2>
+    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Hogar Estudiantil de Colonia del Sacramento</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Alojamiento<br>
+                <strong>Nivel educativo:</strong> Cualquier nivel educativo<br>
+                <strong>Institución:</strong> Intendencia de Colonia<br>
+                <strong>Período de postulaciones:</strong> Inicio: Enero, Fin: Enero<br>
+                <strong>Observaciones:</strong> No existe sección vigente en la web de la Intendencia.<br>
+                <strong>Contacto:</strong> Tel. 452-25336/ 26250 y juventud@colonia.gub.uy<br>
+                <a href="https://www.colonia.gub.uy/?x=detalleNoticia&y=96eb91bee768084a554e1397d7a369e3090d8479" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 10 -->
+<div class="accordion-item" data-categoria="alojamiento">
+    <h2 class="accordion-header" id="headingTen">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
+            Hogar Estudiantil Canario en Montevideo
+        </button>
+    </h2>
+    <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Hogar Estudiantil Canario en Montevideo</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Alojamiento<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Intendencia de Canelones<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 18 años, Edad máxima: 25 años<br>
+                <strong>Observaciones:</strong> Solamente existe link de las convocatorias puntuales, no hay sección en la web.<br>
+                <strong>Contacto:</strong> hogarestudiantilcanelones@imcanelones.gub.uy<br>
+                <a href="https://www.imcanelones.gub.uy/es/noticias/inscripciones-abiertas-para-el-hogar-estudiantil-canario-2024" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 11 -->
+<div class="accordion-item" data-categoria="alojamiento">
+    <h2 class="accordion-header" id="headingEleven">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="true" aria-controls="collapseEleven">
+            Hogar de Colonia en Montevideo
+        </button>
+    </h2>
+    <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Hogar de Colonia en Montevideo</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Alojamiento<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Intendencia de Colonia<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                <strong>Contacto:</strong> Tel. 452-25336/ 26250 y juventud@colonia.gub.uy<br>
+                <a href="https://www.colonia.gub.uy/?x=detalleNoticia&y=ce181f6d0b5b32926273312822c2a97fea6cefa4" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 12 -->
+<div class="accordion-item" data-categoria="alojamiento">
+    <h2 class="accordion-header" id="headingTwelve">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="true" aria-controls="collapseTwelve">
+            Hogar de Cerro Largo en Montevideo
+        </button>
+    </h2>
+    <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Hogar de Cerro Largo en Montevideo</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Alojamiento<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Intendencia de Cerro Largo<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                <strong>Contacto:</strong> Teléfonos: 46426551, 46426552, 46426553
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 13 -->
+<div class="accordion-item" data-categoria="alojamiento">
+    <h2 class="accordion-header" id="headingThirteen">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="true" aria-controls="collapseThirteen">
+            Alojamiento en Montevideo
+        </button>
+    </h2>
+    <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Alojamiento en Montevideo</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Alojamiento<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Intendencia de Durazno<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años, Edad máxima: 23 años<br>
+                <strong>Contacto:</strong> Tel. 4362 3891 int. 101<br>
+                <a href="https://durazno.uy/images/promsocial/becas_2024/formulario%20MDEO%202024.pdf" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 14 -->
+<div class="accordion-item" data-categoria="alojamiento">
+    <h2 class="accordion-header" id="headingFourteen">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" aria-expanded="true" aria-controls="collapseFourteen">
+            Becas Estudiantiles IDD - Alojamiento
+        </button>
+    </h2>
+    <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Becas Estudiantiles IDD - Alojamiento</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Alojamiento<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Intendencia de Durazno<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años, Edad máxima: 23 años<br>
+                <strong>Período de postulaciones:</strong> Inicio: Noviembre, Fin: Diciembre<br>
+                <strong>Observaciones:</strong> Cursar en instituciones públicas de nivel secundario o terciario en Montevideo.<br>
+                <strong>Contacto:</strong> Tel. 4362 3891 int. 99<br>
+                <a href="https://durazno.uy/index.php/becas-estudiantiles.html" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 15 -->
+<div class="accordion-item" data-categoria="alojamiento">
+    <h2 class="accordion-header" id="headingFifteen">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifteen" aria-expanded="true" aria-controls="collapseFifteen">
+            Bienestar Universitario - Alojamiento
+        </button>
+    </h2>
+    <div id="collapseFifteen" class="accordion-collapse collapse" aria-labelledby="headingFifteen" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Bienestar Universitario - Alojamiento</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Alojamiento<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Universidad de la República<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                <strong>Contacto:</strong> becas@bienestar.udelar.edu.uy y 2408 58 65<br>
+                <a href="https://bienestar.udelar.edu.uy/programa-becas/" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 16 -->
+<div class="accordion-item" data-categoria="alojamiento">
+    <h2 class="accordion-header" id="headingSixteen">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSixteen" aria-expanded="true" aria-controls="collapseSixteen">
+            Hogar Club Soriano
+        </button>
+    </h2>
+    <div id="collapseSixteen" class="accordion-collapse collapse" aria-labelledby="headingSixteen" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Hogar Club Soriano</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Alojamiento<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Club Soriano e Intendencia de Soriano<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                <strong>Contacto:</strong> (+598) 2908 5181 y clsoria@adinet.com.uy<br>
+                <a href="https://clubsoriano.org.uy/hogares-estudiantiles/" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 17 -->
+<div class="accordion-item" data-categoria="alojamiento">
+    <h2 class="accordion-header" id="headingSeventeen">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeventeen" aria-expanded="true" aria-controls="collapseSeventeen">
+            Ciudad Universitaria
+        </button>
+    </h2>
+    <div id="collapseSeventeen" class="accordion-collapse collapse" aria-labelledby="headingSeventeen" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Ciudad Universitaria</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Alojamiento<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Instituto Nacional de la Juventud (MIDES)<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años, Edad máxima: 24 años<br>
+                <strong>Período de postulaciones:</strong> Inicio: Diciembre, Fin: Diciembre<br>
+                <strong>Observaciones:</strong> Para estudiar en Montevideo o Salto. La inscripción está a cargo de las Intendencias, por lo que la información sobre cómo inscribirse va a tener 18 variantes.<br>
+                <a href="https://www.gub.uy/ministerio-desarrollo-social/comunicacion/comunicados/ciudad-universitaria" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 1 -->
+<div class="accordion-item" data-categoria="apoyo-economico">
+    <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Apoyo económico mensual
+        </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Apoyo económico mensual</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Apoyo económico<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Fondo de Solidaridad<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                <strong>Período de postulaciones:</strong> Inicio: Noviembre, Fin: Febrero<br>
+                <strong>Observaciones:</strong> La institución también cuenta con un programa de Apoyo y Seguimiento para sus becarios.<br>
+                <strong>Monto:</strong> 2 BPC ($12.354 a valores 2024), con renovación anual.<br>
+                <strong>Contacto:</strong> Tel. 2400 1445<br>
+                <a href="https://becas.fondodesolidaridad.edu.uy/" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 2 -->
+<div class="accordion-item" data-categoria="apoyo-economico">
+    <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            Becas Estudiantiles IDM (dentro del departamento)
+        </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Becas Estudiantiles IDM (dentro del departamento)</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Apoyo económico<br>
+                <strong>Nivel educativo:</strong> Cualquier nivel educativo<br>
+                <strong>Institución:</strong> Intendencia de Maldonado<br>
+                <strong>Observaciones:</strong> Movilidad dentro del departamento, condicionado por no tener el nivel u orientación en la localidad.<br>
+                <strong>Contacto:</strong> 4223 1921 (interno 1446)<br>
+                <a href="https://www.maldonado.gub.uy/becas" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 3 -->
+<div class="accordion-item" data-categoria="apoyo-economico">
+    <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            Becas Estudiantiles IDM (fuera del departamento)
+        </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Becas Estudiantiles IDM (fuera del departamento)</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Apoyo económico<br>
+                <strong>Nivel educativo:</strong> Cualquier nivel educativo<br>
+                <strong>Institución:</strong> Intendencia de Maldonado<br>
+                <strong>Observaciones:</strong> Movilidad fuera del departamento, condicionado por no tener el nivel u orientación en Maldonado.<br>
+                <strong>Contacto:</strong> 4222 1921 (interno 1446)<br>
+                <a href="https://www.maldonado.gub.uy/becas" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 4 -->
+<div class="accordion-item" data-categoria="apoyo-economico">
+    <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+            Bienestar Universitario - Apoyo Económico
+        </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Bienestar Universitario - Apoyo Económico</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Apoyo económico<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Universidad de la República<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                <strong>Observaciones:</strong> El periodo de postulación en las becas de la Udelar varía de acuerdo a si es una solicitud de ingreso, por primera vez o renovación.<br>
+                <strong>Contacto:</strong> becas@bienestar.udelar.edu.uy y 2408 58 65<br>
+                <a href="https://bienestar.udelar.edu.uy/programa-becas/" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 5 -->
+<div class="accordion-item" data-categoria="apoyo-economico">
+    <h2 class="accordion-header" id="headingFive">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+            Bienestar Universitario - Guardería
+        </button>
+    </h2>
+    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Bienestar Universitario - Guardería</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Apoyo económico<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Universidad de la República<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                <strong>Contacto:</strong> becas@bienestar.udelar.edu.uy y 2408 58 65<br>
+                <a href="https://bienestar.udelar.edu.uy/programa-becas/" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- Item de Acordeón 1 -->
+<div class="accordion-item" data-categoria="material-estudio">
+    <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Bienestar Universitario - Laptop
+        </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Bienestar Universitario - Laptop</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Material de estudio<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Universidad de la República<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                <strong>Observaciones:</strong> Préstamo anual de un equipo.<br>
+                <strong>Contacto:</strong> becas@bienestar.udelar.edu.uy y 2408 58 65<br>
+                <a href="https://bienestar.udelar.edu.uy/programa-becas/" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 2 -->
+<div class="accordion-item" data-categoria="material-estudio">
+    <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            Bienestar Universitario - Material de estudio
+        </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Bienestar Universitario - Material de estudio</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Material de estudio<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Universidad de la República<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                <strong>Observaciones:</strong> Está dirigida a cubrir las necesidades de compra de materiales en relación a los requerimientos de las asignaturas en curso o actividades académicas requeridas.<br>
+                <strong>Contacto:</strong> becas@bienestar.udelar.edu.uy y 2408 58 65<br>
+                <a href="https://bienestar.udelar.edu.uy/programa-becas/" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 3 -->
+<div class="accordion-item" data-categoria="material-estudio">
+    <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            Estucompu
+        </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Estucompu</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Material de estudio<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Fondo de Solidaridad<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                <strong>Observaciones:</strong> Exclusivo para becarios del Fondo de Solidaridad, el periodo de postulación se informará en el Portal de Estudiantes.<br>
+                <strong>Contacto:</strong> <a href="https://becas.fondodesolidaridad.edu.uy/estcumpu-2024/" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- Item de Acordeón 1 -->
+<div class="accordion-item" data-categoria="transporte">
+    <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Bienestar Universitario - Descuento en Pasajes Interdepartamentales
+        </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Bienestar Universitario - Descuento en Pasajes Interdepartamentales</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Transporte<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Universidad de la República<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                <strong>Contacto:</strong> becas@bienestar.udelar.edu.uy y 2408 58 65<br>
+                <a href="https://bienestar.udelar.edu.uy/programa-becas/" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Item de Acordeón 2 -->
+<div class="accordion-item" data-categoria="transporte">
+    <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            Bienestar Universitario - Transporte
+        </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Bienestar Universitario - Transporte</h5>
+            <p class="card-text">
+                <strong>Categoría:</strong> Transporte<br>
+                <strong>Nivel educativo:</strong> Terciario, Universitario<br>
+                <strong>Institución:</strong> Universidad de la República<br>
+                <strong>Requisitos de edad:</strong> Edad mínima: 17 años<br>
+                <strong>Observaciones:</strong> Para trayectos interdepartamentales de menos de 60 km, o transporte suburbano que no cuenta con subsidios públicos. Está destinada también a estudiantes cuya situación de discapacidad dificulta su accesibilidad para poder concurrir al centro educativo universitario o realizar otras actividades académicas a desarrollarse en la Udelar.<br>
+                <strong>Contacto:</strong> becas@bienestar.udelar.edu.uy y 2408 58 65<br>
+                <a href="https://bienestar.udelar.edu.uy/programa-becas/" class="btn btn-primary btn-saber-mas">Saber más</a>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- Item de Acordeón 1 -->
+<div class="accordion-item" data-categoria="extraedad">
+    <h2 class="accordion-header" id="headingExtraedad">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExtraedad" aria-expanded="true" aria-controls="collapseExtraedad">
+            Convocatoria a Becas Extraedad 
+        </button>
+    </h2>
+    <div id="collapseExtraedad" class="accordion-collapse collapse show" aria-labelledby="headingExtraedad" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <h5 class="card-title">Convocatoria a Becas Extraedad </h5>
+            <p class="card-text">
+                <strong>Descripción:</strong> El Servicio Central de Inclusión y Bienestar (SCIBU) abre el proceso de preinscripción para las becas extraedad anualmente. Está dirigido a estudiantes de Udelar mayores de 27 años que soliciten la beca por primera vez. Los solicitantes deben estar inscritos en Udelar y justificar que han enfrentado circunstancias que han afectado su formación universitaria, como condicionantes de género, etnicidad, discapacidad, privación de libertad, u otros factores socioeconómicos.<br><br>
+                <strong>Requisitos:</strong><br>
+                - Estar inscrito en Udelar.<br>
+                - Tener más de 27 años.<br>
+                - Solicitar la beca por primera vez.<br>
+                - Justificar las dificultades que han afectado su trayectoria académica.<br><br>
+                <strong>Contacto:</strong> Email: becas@bienestar.udelar.edu.uy<br>
+                Teléfono: 2408 58 65<br><br>
+                <strong>Observaciones:</strong> Las solicitudes fuera de plazo no serán aceptadas.
+            </p>
+        </div>
+    </div>
+    <div> </div>
+        
+    </div>
+
+
+    
+    <footer class="text-muted">
+        <div class="container text-center">
+            <p class="float-end">
+                <a href="#">Volver arriba</a>
+            </p>
+            <p>Este sitio forma parte de la Corriente Gremial Universitaria</p>
+        </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.btn-filter').click(function() {
+                var category = $(this).data('category');
+                if (category === 'todos') {
+                    $('.accordion-item').show();
+                } else {
+                    $('.accordion-item').each(function() {
+                        if ($(this).data('categoria') === category) {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

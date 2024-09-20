@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unite a la Corriente Gremial Universitaria - C.G.U.</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: #000000;
+            background-image: url('img/opa.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #0033a0;
+            color: #fff;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar {
+            background-color: rgb(217, 234, 252) !important;
+            padding: 0.5rem 1rem !important;
+        }
+
+        .navbar .nav-link {
+            color: #000000 !important;
+            font-family: 'Georgia', serif !important;
+            font-style: italic !important;
+        }
+
+        .navbar .nav-link:hover {
+            color: #555555 !important;
+        }
+
+        .navbar .nav-link.active {
+    color: #000000 !important;
+    font-weight: 400 !important; /* Cambiar de 700 a 400 para quitar la negrita */
+}
+
+
+        .navbar-brand .logo {
+            max-height: 40px !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: #000000 !important;
+            margin: 0 1rem !important;
+            font-weight: 400 !important;
+        }
+
+        .dropdown-menu {
+            background-color: #ffffff !important;
+            border: 1px solid #ddd !important;
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            z-index: 1 !important;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        .dropdown-menu a {
+            text-decoration: none !important;
+            color: #000000 !important;
+            display: block !important;
+            padding: 10px 20px !important;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f1f1f1 !important;
+        }
+        
+        .join-section {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        .join-section h2 {
+            color: #0033a0;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .join-section p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .join-section a {
+            color: #0033a0;
+            text-decoration: underline;
+        }
+
+        .faculties-list {
+            text-align: left;
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+
+        .faculties-list li {
+            margin-bottom: 10px;
+        }
+
+        .cgus-logos {
+            margin-top: 20px;
+        }
+
+        .cgu-item {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .cgu-item img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        .cgu-item h3 {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #0033a0;
+        }
+
+        .cgu-item a {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="img/logo.png" alt="Logo" class="logo">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav w-100 justify-content-between">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="estatuto.html">Estatuto</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="centros-link" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">Centros</a>
+                    <ul class="dropdown-menu" aria-labelledby="centros-link">
+                        <li><a class="dropdown-item" href="facultad-derecho.html">Facultad de Derecho</a></li>
+                        <li><a class="dropdown-item" href="facultad-ciencias-sociales.html">Facultad de Ciencias Sociales</a></li>
+                        <li><a class="dropdown-item" href="facultad-ciencias-economicas.html">Facultad de Ciencias Económicas y de Administración</a></li>
+                        <li><a class="dropdown-item" href="facultad-informacion-comunicacion.html">Facultad de Información y Comunicación</a></li>
+                        <li><a class="dropdown-item" href="facultad-medicina.html">Facultad de Medicina</a></li>
+                        <li><a class="dropdown-item" href="facultad-arquitectura.html">Facultad de Arquitectura, Diseño y Urbanismo</a></li>
+                        <li><a class="dropdown-item" href="facultad-veterinaria.html">Facultad de Veterinaria</a></li>
+                        <li><a class="dropdown-item" href="facultad-agronomia.html">Facultad de Agronomía</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="quienes-somos.html">¿Quiénes somos?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sell.html">¡Sumate!</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="join-section">
+    <h2>¡Unite a la Corriente Gremial Universitaria!</h2>
+    <p>Estamos en constante búsqueda de estudiantes comprometidos que quieran hacer una diferencia en nuestra comunidad universitaria. Si tienes pasión por el cambio, nuevas ideas, y quieres ser parte de un equipo dinámico, te invitamos a unirte a nosotros.</p>
+    <p>Puedes comunicarte con la CGU de tu facultad:</p>
+  
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 cgu-item">
+                <a href="https://www.instagram.com/cguderecho/?hl=es" target="_blank">
+                    <img src="img/cgud.png" alt="CGU Derecho">
+                    <h3>CGU Derecho</h3>
+                </a>
+            </div>
+            <div class="col-md-6 cgu-item">
+                <a href="https://www.instagram.com/cgusociales/?hl=es-la" target="_blank">
+                    <img src="img/cgusoci.png" alt="CGU Ciencias Sociales">
+                    <h3>CGU Ciencias Sociales</h3>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 cgu-item">
+                <a href="https://www.instagram.com/cgueconomia/?hl=es" target="_blank">
+                    <img src="img/cgueco.png" alt="CGU Ciencias Económicas">
+                    <h3>CGU Ciencias Económicas</h3>
+                </a>
+            </div>
+            <div class="col-md-6 cgu-item">
+                <a href="https://www.instagram.com/cgufic/" target="_blank">
+                    <img src="img/cgufic.png" alt="CGU Información y Comunicación">
+                    <h3>CGU Información y Comunicación</h3>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 cgu-item">
+                <a href="https://www.instagram.com/cgumedicina/?hl=es" target="_blank">
+                    <img src="img/cgumed.png" alt="CGU Medicina">
+                    <h3>CGU Medicina</h3>
+                </a>
+            </div>
+            <div class="col-md-6 cgu-item">
+                <a href="https://www.instagram.com/cgu_fadu/?hl=es-la" target="_blank">
+                    <img src="img/cguarqi.jpeg" alt="CGU Arquitectura">
+                    <h3>CGU Arquitectura</h3>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 cgu-item">
+                <a href="https://www.instagram.com/cguvet/?hl=es" target="_blank">
+                    <img src="img/cguvet.png" alt="CGU Veterinaria">
+                    <h3>CGU Veterinaria</h3>
+                </a>
+            </div>
+            <div class="col-md-6 cgu-item">
+                <a href="https://www.instagram.com/cgu.agronomia/?hl=es" target="_blank">
+                    <img src="img/cguagro.png" alt="CGU Agronomía">
+                    <h3>CGU Agronomía</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <p>¡Esperamos contar contigo para fortalecer nuestra agrupación y trabajar juntos por un futuro mejor!</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
